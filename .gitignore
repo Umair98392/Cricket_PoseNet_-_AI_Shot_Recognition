@@ -1,0 +1,22 @@
+# ignore these files and directories in backend to push in github
+
+# ignore detectron2 repository
+detectron2
+
+#output folder
+output_directory
+
+#launch.json folder
+.vscode
+
+__pycache__
+
+# ignore to upload extracted dataset
+/backend/data/raw_data/unaugmented_data/
+/backend/data/processed_data/data/
+/backend/data/processed_data/cleaned_images/
+
+#jupyter notbook checkpoints
+.ipynb_checkpoints
+
+.pytest_cache
