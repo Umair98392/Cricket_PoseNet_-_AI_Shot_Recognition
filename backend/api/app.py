@@ -39,6 +39,8 @@ output_directory = './output_directory'        # Replace with the actual directo
 model = torch.load('models/trained_model/model.pth')
 loaded_scaler = joblib.load('models/trained_model/scaler.pkl')
 
+# Define the desired resolution
+desired_resolution = (240, 240)
 
 # Home page route
 @app.get("/")
@@ -54,6 +56,8 @@ async def predict(file: UploadFile):
     nparr = np.frombuffer(content, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
+    # Resize the image to the desired resolution
+    img = cv2.resize(img, desired_resolution)
     # call function to extract keypoint
     kpp = extract_keypoints(img)
 
