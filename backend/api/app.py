@@ -18,8 +18,8 @@ origins = [
     "http://127.0.0.1:8085",
     "https://cric-ai.netlify.app",
     "http://192.168.1.26:5173",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://cricshotai.netlify.app"
     # Adjust this to match your frontend's URL
 ]
 

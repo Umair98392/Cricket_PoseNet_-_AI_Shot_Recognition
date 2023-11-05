@@ -13,11 +13,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-# Clone the Detectron2 repository, Run setup.py to obtain the install_requires, Add Detectron2 to the system path.
-subprocess.run(["git", "clone", "https://github.com/facebookresearch/detectron2.git"])
-dist = distutils.core.run_setup("./detectron2/setup.py")
-subprocess.run(["pip", "-m", "pip", "install"] + dist.install_requires)
-sys.path.insert(0, os.path.abspath("./detectron2"))
+# # Clone the Detectron2 repository, Run setup.py to obtain the install_requires, Add Detectron2 to the system path.
+# subprocess.run(["git", "clone", "https://github.com/facebookresearch/detectron2.git"])
+# dist = distutils.core.run_setup("./detectron2/setup.py")
+# subprocess.run(["pip", "-m", "pip", "install"] + dist.install_requires)
+# sys.path.insert(0, os.path.abspath("./detectron2"))
+
 
 
 # define configure instance of detectron2
