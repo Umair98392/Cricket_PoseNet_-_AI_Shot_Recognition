@@ -1,13 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ImageCard from './ImageCard';
 import Gifshot from './playshot.gif'
-import Gifshot1 from './playshot1.gif'
+import Gifshot1 from './playshotdark.gif'
 import useTheme from '../../context/theme';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 
 
 const Shotcontent = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease',
+    });
+  }, []);
 
   
     const { theme } = useTheme();
@@ -15,18 +25,18 @@ const Shotcontent = () => {
   return (
     <div className="flex min-h-screen items-center justify-center m-auto bg-gray-100 dark:bg-black">
         <div  className="max-w-screen-xl px-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-[#286753] mb-4 p-2">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#286753] mb-4 p-2" data-aos="fade-right">
         Different Types of Cricket Shots
         </h1>
         
-         <p className="text-lg dark:text-gray-300 text-black mb-8">
+         <p className="text-lg dark:text-gray-300 text-black mb-8 " data-aos="fade-left">
          Let’s explore all the shots found in the cricket book, along with some innovative 
          or unorthodox shots played by some of the geniuses of the sport.
         </p>
 
        
         
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 sm:mr-2">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 sm:mr-2" data-aos="fade-up">
         <ImageCard
           title="Defensive Shots"
           description="A deliberate shot that aims to prevent the ball from hitting the wicket or the player's pads."
@@ -48,7 +58,7 @@ const Shotcontent = () => {
         <ImageCard
           title="Sweep Shot"
           description="The sweep shots are cross-batted shots played on the front foot, usually by kneeling on one knee."
-          imageSrc="https://admin.thecricketer.com/weblab/sites/96c8b790-b593-bfda-0ba4-ecd3a9fdefc2/resources/images/site/googly201118-3.jpg"
+          imageSrc="https://cdn.shopify.com/s/files/1/0278/4565/6649/files/WhatsApp_Image_2023-08-07_at_05.27.43.webp?v=1691366509"
           linkTo='/Sweep'
         />
         <ImageCard

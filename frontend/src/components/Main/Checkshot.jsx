@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Vid from './load.mp4';
 import defaultImage from './cam1.png';
-import darkImage from './camDark.png';
+import darkImage from './camdark.png';
 import useTheme from '../../context/theme';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Checkshot() {
   const [predictedAge, setPredictedAge] = useState('N/A');
@@ -150,12 +152,17 @@ function Checkshot() {
   
     return { description, link };
   };
-
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease',
+    });
+  }, []);
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-200 dark:bg-black">
       <main className="w-full max-w-screen-md p-2">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold dark:text-white">Cricket PoseNet: AI Shot Recognition</h1>
+          <h1 className="text-3xl font-bold dark:text-white" data-aos="zoom-in" >Cricket PoseNet: AI Shot Recognition</h1>
         </div>
 
         <section
@@ -167,7 +174,7 @@ function Checkshot() {
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <h2 className="text-xl font-bold text-center dark:text-white">Upload an Image</h2>
+          <h2 className="text-xl font-bold text-center dark:text-white" data-aos="fade-right" >Upload an Image</h2>
 
           <section className="mt-4 text-center">
             <div className="flex justify-center items-center">
@@ -178,7 +185,7 @@ function Checkshot() {
               )}
             </div>
           </section>
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-left" >
             <label className="block text-gray-500 font-bold mb-2">Drag and Drop the image here or</label>
             <label className="block relative font-bold cursor-pointer rounded-lg p-1 px-2 py-1 hover:text-green-900 hover:ring-2 hover:ring-offset-2 hover:ring-green-800 transition-all ease-out duration-300">
               <input
@@ -192,7 +199,7 @@ function Checkshot() {
             </label>
           </div>
 
-          <div className="text-center">
+          <div className="text-center" data-aos="zoom-in" >
             <button
               id="predict-button"
               onClick={handlePredictButtonClick}
@@ -280,9 +287,9 @@ function Checkshot() {
 
         <section className="mt-4 text-center relative">
           {showAllImages && (
-            <div className="bg-gray-100 dark:bg-[#1E1E1E] border border-green-300 rounded-lg p-1 shadow-md mx-auto  mb-4">
-               <div className="bg-green-100 border border-green-300 rounded-lg p-1 shadow-md mx-auto  mb-4 inline-block">
-              <h2 className="text-xl font-bold text-center text-green-500 mb-4">Prediction Result</h2>
+            <div className="bg-gray-100 dark:bg-[#1E1E1E] border border-green-300 rounded-lg p-1 shadow-md mx-auto  mb-4" data-aos="fade-up">
+               <div className="bg-green-100 border border-green-300 rounded-lg p-1 shadow-md mx-auto  mb-4 inline-block" >
+              <h2 className="text-xl font-bold text-center text-green-800 mb-4" data-aos="zoom-in" >Prediction Result</h2>
               <p className="text-md text-gray-700">
                 Confidence: <span id="predicted-age" className="font-bold text-green-700 text-center">
                   {predictedAge}
@@ -295,17 +302,20 @@ function Checkshot() {
               </p>
               </div>
               <div className="bg-white-100 border border-green-300 rounded-lg p-1 shadow-md mx-auto  mb-4 block">
-              <p className="text-md text-gray-700 italic dark:text-white">
+              <p className="text-md text-gray-700 italic dark:text-white" data-aos="fade-right" >
               {getDescriptionAndLink(predictedGender).description}
               </p>
+              <p className="text-md text-gray-700 font-bold dark:text-white dark:hover:text-cyan-900 hover:text-green-900"  data-aos="fade-right">
               <Link to={getDescriptionAndLink(predictedGender).link}>
               Know more
                 </Link>
 
+                </p>
+
                 </div>
 
 
-              <div className="flex flex-wrap justify-center">
+              <div className="flex flex-wrap justify-center" data-aos="fade-left" >
                 {predictedImages.map((image, index) => (
                   <div key={index} className="w-full md:w-1/3 lg:w-1/2 p-2">
                     <img className="predicted-image max-w-xs mx-auto mb-2" src={image} style={{ maxWidth: '200px' }} alt={`Predicted ${index}`} />

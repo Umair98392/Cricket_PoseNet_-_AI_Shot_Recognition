@@ -1,0 +1,88 @@
+body {
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #edebeb;
+    padding: 20px;
+}
+
+header {
+    padding: 20px 0;
+}
+
+.prediction-form {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#image-upload {
+    display: block;
+    margin: 15px auto;
+}
+
+#predict-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+#predict-button:hover {
+    background-color: #0056b3;
+}
+
+.prediction-result {
+    margin-top: 20px;
+}
+
+.prediction-result h2 {
+    color: #007BFF;
+}
+
+#result {
+    font-size: 18px;
+    color: #333;
+}
+
+#predicted-age,
+#predicted-gender {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+footer {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #007BFF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect}  from "react";
 import Gif from './straightd.gif';
 import Gif2 from './offdrive.gif';
 import Gif3 from './ondrive.gif';
@@ -6,13 +6,22 @@ import Gif4 from './cd.gif';
 import Gif5 from './squaredrive.gif';
 import Gif6 from './backfootd.gif';
 import Shotcard from "./Shotcard";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Defense = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease',
+    });
+  }, []);
+
   return (
     <div className="dark:bg-black bg-gray-100 min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold mb-4 text-center text-[#286753]">Drives</h1>
-        <p className="py-4 dark:text-gray-300 mb-4 md:text-lg text-center">
+        <h1 className="text-3xl font-bold mb-4 text-center text-[#286753]" data-aos="fade-right">Drives</h1>
+        <p className="py-4 dark:text-gray-300 mb-4 md:text-lg text-center" data-aos="fade-left">
         Drives are straight-batted shots, played by swinging the bat in a vertical arc through the line of the ball. Let’s explore the drive shots.
         </p>
 

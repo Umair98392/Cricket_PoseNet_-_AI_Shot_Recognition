@@ -13,7 +13,7 @@ function PopupImage() {
 
   return (
     <div>
-      <a href="#" onClick={openPopup} className=' font-bold  text-center p-0.5  hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300 rounded-md dark:text-white  '>Click to open image</a>
+      <a href="javascript:void(0)" onClick={openPopup} className=' font-bold  text-center p-0.5  hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300 rounded-md dark:text-white  '>Click to open image</a>
 
       {isPopupOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">

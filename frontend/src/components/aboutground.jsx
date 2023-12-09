@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PopupImage from './PopupImage';
 import Img from '../assets/pics/shots/shotdirection.png';
-import useTheme from '../context/theme';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function AboutGround() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease',
+    });
+  }, []);
   return (
     <section className='py-20 px-4 md:px-0 bg-gray-100 dark:bg-black'>
       <div className='container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-10'>
-        <div className='md:w-1/2'>
+        <div className='md:w-1/2' 
+         data-aos="fade-right" // Existing animation direction
+         >
           <h2 className='text-3xl md:text-4xl font-semibold text-center md:text-left text-gray-800 dark:text-white'>
             Cricket Shots And Ground Understandings
           </h2>
@@ -31,10 +41,13 @@ function AboutGround() {
             <p className=' md:text-lg text-gray-700 dark:text-white'>
               Fielding positions are an essential part of any cricket match, and if the captain places his or her players in the correct places, it can be key to the final outcome. Cricket is a sport with unique terminology, and many of the fielding positions come with their own idiosyncratic language. Click below to see the fielding positions.
             </p>
+          
             <PopupImage />
+         
           </div>
         </div>
-        <img src={Img} alt="" className='md:w-1/2' />
+        <img src={Img} alt="" className='md:w-1/2'  data-aos="fade-left" // Existing animation direction
+         />
       </div>
     </section>
   );
