@@ -12,6 +12,7 @@ output_directory
 __pycache__
 
 # ignore to upload extracted dataset
+/backend/data/
 /backend/data/raw_data/unaugmented_data/
 /backend/data/processed_data/data/
 /backend/data/processed_data/cleaned_images/
