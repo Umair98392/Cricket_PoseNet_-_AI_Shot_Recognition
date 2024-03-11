@@ -13,6 +13,8 @@ __pycache__
 
 # ignore to upload extracted dataset
 /backend/data/
+#ignore result vieo
+predicted_result.mp4
 
 #jupyter notbook checkpoints
 .ipynb_checkpoints
