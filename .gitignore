@@ -3,19 +3,17 @@
 # ignore detectron2 repository
 detectron2
 
-#output folder
-output_directory
 
 #launch.json folder
 .vscode
 
-__pycache__
-
 # ignore to upload extracted dataset
 /backend/data/
-#ignore result vieo
-predicted_result.mp4
 
+#output folder
+output_directory
+__pycache__
+env
 #jupyter notbook checkpoints
 .ipynb_checkpoints
 
