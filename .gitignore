@@ -13,7 +13,7 @@ detectron2
 #output folder
 output_directory
 __pycache__
-env
+env1
 #jupyter notbook checkpoints
 .ipynb_checkpoints
 
