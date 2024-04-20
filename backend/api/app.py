@@ -43,46 +43,46 @@ app.add_middleware(
 
 
 # Load the pre-trained model and scaler to transform keypoints
-i_model = load_model('./models/trained_model/i_model.keras')
-loaded_scaler = joblib.load('./models/trained_model/i_scaler.pkl')
+# i_model = load_model('./models/trained_model/i_model.keras')
+# loaded_scaler = joblib.load('./models/trained_model/i_scaler.pkl')
 v_model = load_model('./models/trained_model/v_model.keras')
 
-# Define the desired resolution
-desired_resolution = (288, 288)
+# # Define the desired resolution
+# desired_resolution = (288, 288)
 
-# Home page route
-@app.get("/")
-async def home():
-    return "Welcome  to Crickshot PoseNet : AI Shot Recognition"
+# # Home page route
+# @app.get("/")
+# async def home():
+#     return "Welcome  to Crickshot PoseNet : AI Shot Recognition"
 
 
-# Prediction route (For Image)
-@app.post("/predict")
-async def predict(file: UploadFile):
-    # Read and process the uploaded image using OpenCV
-    content = await file.read()
-    nparr = np.frombuffer(content, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+# # Prediction route (For Image)
+# @app.post("/predict")
+# async def predict(file: UploadFile):
+#     # Read and process the uploaded image using OpenCV
+#     content = await file.read()
+#     nparr = np.frombuffer(content, np.uint8)
+#     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    img = cv2.resize(img, desired_resolution,interpolation=cv2.INTER_LINEAR)
+#     img = cv2.resize(img, desired_resolution,interpolation=cv2.INTER_LINEAR)
     
-    # call prediction function
-    predicted_shot, confidence, res_img_1, res_img_2, res_img_3 = prediction_on_image(img, i_model , loaded_scaler)
+#     # call prediction function
+#     predicted_shot, confidence, res_img_1, res_img_2, res_img_3 = prediction_on_image(img, i_model , loaded_scaler)
 
-    if predicted_shot == None:
-        return              #Error for invalid image
+#     if predicted_shot == None:
+#         return              #Error for invalid image
 
 
-    # Create JSON response with individual paths
-    response_json = {
-        "predicted_shot": predicted_shot,
-        "confidence": f'{confidence:.2f}%',
-        "result_image_1": res_img_1,
-        "result_image_2": res_img_2,
-        "result_image_3": res_img_3,
-    }
+#     # Create JSON response with individual paths
+#     response_json = {
+#         "predicted_shot": predicted_shot,
+#         "confidence": f'{confidence:.2f}%',
+#         "result_image_1": res_img_1,
+#         "result_image_2": res_img_2,
+#         "result_image_3": res_img_3,
+#     }
 
-    return response_json
+#     return response_json
 
 
 # Prediction route (For Video)
