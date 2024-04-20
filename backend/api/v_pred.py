@@ -93,6 +93,9 @@ def prediction_on_video(v_model, path, step_size=3, interval=5, n_frames=18, lab
     predicted_video_path = f'{output_directory}/predicted_video_2.mp4'
     convert_mjpeg_to_avc1(f'{output_directory}/predicted_video_1.mp4', predicted_video_path)
 
+    #new line
+    os.remove(f'{output_directory}/predicted_video_1.mp4')
+
     # Initialize the dictionary with 0 for each key
     json = { 'shots_played': 0, 'shot_sequence': 0, 'bowled_count': 0, 'cover_drive_count': 0, 'defence_count': 0, 'pull_count': 0,
             'reverse_sweep_count': 0, 'bowled_avg_prob': 0, 'cover_drive_avg_prob': 0, 'defence_avg_prob': 0, 'pull_avg_prob': 0,
