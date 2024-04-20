@@ -21,6 +21,7 @@ app = FastAPI()
 origins = [
 
 
+    "http://0.0.0.0:8085",
     "http://127.0.0.1:8085",
     "https://cric-ai.netlify.app",
     "http://192.168.1.26:5173",
@@ -44,7 +45,7 @@ app.add_middleware(
 # Load the pre-trained model and scaler to transform keypoints
 i_model = load_model('./models/trained_model/i_model.keras')
 loaded_scaler = joblib.load('./models/trained_model/i_scaler.pkl')
-v_model = load_model('./models/trained_model/v_model.keras')
+#v_model = load_model('./models/trained_model/v_model.keras')
 
 # Define the desired resolution
 desired_resolution = (288, 288)
@@ -85,22 +86,22 @@ async def predict(file: UploadFile):
 
 
 # Prediction route (For Video)
-@app.post("/predict_video")
-async def predict_video(file: UploadFile):
-    # Read and process the uploaded video using OpenCV
-    content = await file.read()
-
-    #Save the file to disk
-    with open("temp_video.mp4", "wb") as video_file:
-        video_file.write(content)
-    
-    # Perform video analysis and prediction
-    result_json = prediction_on_video(v_model, "temp_video.mp4")
-    
-    # Clean up the temporary video file
-    os.remove("temp_video.mp4")
-    
-    return result_json
+#@app.post("/predict_video")
+#async def predict_video(file: UploadFile):
+#    # Read and process the uploaded video using OpenCV
+#    content = await file.read()
+#
+#    #Save the file to disk
+#    with open("temp_video.mp4", "wb") as video_file:
+#        video_file.write(content)
+#    
+#    # Perform video analysis and prediction
+#    result_json = prediction_on_video(v_model, "temp_video.mp4")
+#    
+#    # Clean up the temporary video file
+#    os.remove("temp_video.mp4")
+#    
+#    return result_json
 
 
 if __name__ == "__main__":
