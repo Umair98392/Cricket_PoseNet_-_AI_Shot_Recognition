@@ -8,7 +8,7 @@ opencv-contrib-python==4.9.0.80
 python-multipart==0.0.9
 scikit-learn==1.4.1.post1
 tensorflow==2.15.0
-torch==2.2.1+cpu
+torch==2.2.1
 tqdm==4.66.2
 typing_extensions==4.10.0
 ultralytics==8.1.34
