@@ -156,5 +156,5 @@ def prob_viz(pred_probs, labels, frame, colors=colors):
 
 def convert_mjpeg_to_avc1(input_file, output_file):
     # command = f'ffmpeg -i {input_file} -c:v libx264 -preset slow -crf 22 -c:a aac -b:a 128k -strict -2 {output_file} > /dev/null 2>&1'
-    command = f'ffmpeg -i {input_file} -c:v libx264 -preset slow -crf 22 -c:a aac -b:a 128k -strict -2 {output_file}'
+    command = f'ffmpeg -y -i {input_file} -c:v libx264 -preset slow -crf 22 -c:a aac -b:a 128k -strict -2 {output_file}'
     subprocess.run(command, shell=True)
