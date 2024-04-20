@@ -7,7 +7,7 @@ import numpy as np
 
 from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from api.i_pred import prediction_on_image
+# from api.i_pred import prediction_on_image
 from api.v_pred import prediction_on_video
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
