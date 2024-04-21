@@ -1,8 +1,15 @@
-body {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
     display: flex;
     justify-content: center;
     text-align: center;
+    height: 100dvw;
+    width: 100dvh;
 }
 
 .container {
@@ -10,6 +17,7 @@ body {
     max-width: 800px;
     background-color: #edebeb;
     padding: 20px;
+    height: fit-content;
 }
 
 header {
@@ -66,7 +74,15 @@ footer {
     padding-top: 10px;
 }
 
+#image-container{
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center;
+}
 
+.predicted-image {
+	padding: 2rem;
+}
 
 .loader {
     border: 4px solid rgba(255, 255, 255, 0.3);
@@ -85,4 +101,10 @@ footer {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+#uploaded-video {
+    width: 100%;
+    height: auto;
 }

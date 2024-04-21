@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circkshot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cricket PoseNet : AI Shot Recognition</h1>
+        </header>
+        
+        <main>
+
+            <section class="prediction-form">
+                <h2>Upload a video</h2>
+                <p>Upload a video to predict the shot.</p>
+                <input type="file" id="video-upload" accept="video/*">
+                <button id="predict-button">Predict</button>
+            </section>
+
+            <div id="loader"></div>
+
+            <section class="prediction-result">
+                <h2>Prediction Result</h2>
+                <div id="result">
+                    <p>Confidence :  <span id="predicted-age">N/A</span></p>
+                    <p>Predicted Shot : <span id="predicted-gender">N/A</span></p>
+                </div>
+                
+                <div id="video-preview">
+                    <h2>Uploaded Video</h2>
+                    <video id="uploaded-video" controls></video>
+                </div>
+                <div id="video-container">
+                    <video id="result-video" controls></video>
+                </div>
+            </section>
+
+            <div>
+                <a href="./index.html">Click to Upload Image!</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Age and Gender Prediction Tool</p>
+        </footer>
+    </div>
+    
+    <script src="script_video.js"></script>
+</body>
+</html>
