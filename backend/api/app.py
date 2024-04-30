@@ -53,7 +53,7 @@ desired_resolution = (288, 288)
 # Home page route
 @app.get("/")
 async def home():
-    return "Welcome  to Crickshot PoseNet : AI Shot Recognition"
+    return "Welcome  to Crickshot PoseNet : AI Shot Assistant"
 
 
 # Prediction route (For Image)
